@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.ComponentModel;
 using SpotifyAPI.Web;
 using SpotifyAPI.Web.Enums;
@@ -14,6 +15,8 @@ namespace Spotify_Toolkit
         SpotifyWebAPI _spotify;
         PrivateProfile privateProfile;
         List<SimplePlaylist> userPlaylists;
+        private bool nameTyped;
+        private string generatedName;
 
         public Form1()
         {
@@ -26,7 +29,7 @@ namespace Spotify_Toolkit
         /// </summary>
         public void getProfile()
         {
-            ImplicitGrantAuth auth = new ImplicitGrantAuth("5349838ba8c54428a41ffc17eac1111b", "http://localhost:8888", "http://localhost:8888", Scope.UserLibraryModify);
+            ImplicitGrantAuth auth = new ImplicitGrantAuth("5349838ba8c54428a41ffc17eac1111b", "http://localhost:8888", "http://localhost:8888", Scope.PlaylistModifyPublic);
             auth.AuthReceived += async (sender, payload) =>
             {
                 auth.Stop();
@@ -86,7 +89,7 @@ namespace Spotify_Toolkit
                 bgw.WorkerReportsProgress = false;
                 bgw.DoWork += (sender, e) =>
                 {
-                    FullPlaylist newPlaylist = _spotify.CreatePlaylist(_spotify.GetPrivateProfile().Id, playlist.Name + " - REV", false);
+                    FullPlaylist newPlaylist = _spotify.CreatePlaylist(_spotify.GetPrivateProfile().Id, tbxNewName.Text, true);
                     for (int i = playlist.Tracks.Total - 1; i >= 0; i--)
                     {
                         _spotify.AddPlaylistTrack(newPlaylist.Id, paging.Items[i].Track.Uri);
@@ -123,6 +126,53 @@ namespace Spotify_Toolkit
         private void btnReverse_Click(object sender, EventArgs e)
         {
             ReversePlaylist(userPlaylists[cobxReverse.SelectedIndex], cbxNewPlaylist.Checked);
+        }
+
+        private void cobxReverse_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (!nameTyped)
+            {
+                tbxNewName.Text = userPlaylists[cobxReverse.SelectedIndex].Name + " - REV";
+                nameTyped = false;
+            }
+        }
+
+        private void cbxNewPlaylist_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxNewPlaylist.Checked)
+            {
+                tbxNewName.Enabled = true;
+                tbxNewName.ForeColor = nameTyped ? SystemColors.WindowText : SystemColors.ControlDarkDark;
+                lblName.Enabled = true;
+            }
+            else
+            {
+                tbxNewName.ForeColor = SystemColors.Window;
+                tbxNewName.ReadOnly = false;
+                lblName.Enabled = false;
+            }
+        }
+
+        private void tbxNewName_TextChanged(object sender, EventArgs e)
+        {
+            nameTyped = true;
+        }
+
+        private void tbxNewName_Enter(object sender, EventArgs e)
+        {
+            generatedName = tbxNewName.Text;
+            tbxNewName.Text = "";
+            nameTyped = false;
+            tbxNewName.ForeColor = SystemColors.WindowText;
+        }
+
+        private void tbxNewName_Leave(object sender, EventArgs e)
+        {
+            if (!nameTyped)
+            {
+                tbxNewName.ForeColor = SystemColors.ControlDark;
+                tbxNewName.Text = generatedName;
+            }
         }
     }
 }
