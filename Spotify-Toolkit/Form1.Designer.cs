@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.pnlProfile = new System.Windows.Forms.Panel();
+            this.gbxSectionReverse = new System.Windows.Forms.GroupBox();
+            this.pbrReverse = new System.Windows.Forms.ProgressBar();
+            this.cbxNewPlaylist = new System.Windows.Forms.CheckBox();
+            this.btnReverse = new System.Windows.Forms.Button();
+            this.cobxReverse = new System.Windows.Forms.ComboBox();
             this.lblProfileDisplayName = new System.Windows.Forms.Label();
             this.lblProfile = new System.Windows.Forms.Label();
-            this.cobxReverse = new System.Windows.Forms.ComboBox();
-            this.gbxSectionReverse = new System.Windows.Forms.GroupBox();
-            this.btnReverse = new System.Windows.Forms.Button();
-            this.cbxNewPlaylist = new System.Windows.Forms.CheckBox();
-            this.pbrReverse = new System.Windows.Forms.ProgressBar();
             this.pnlProfile.SuspendLayout();
             this.gbxSectionReverse.SuspendLayout();
             this.SuspendLayout();
@@ -51,39 +51,9 @@
             this.pnlProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlProfile.Location = new System.Drawing.Point(13, 13);
             this.pnlProfile.Name = "pnlProfile";
-            this.pnlProfile.Size = new System.Drawing.Size(272, 180);
+            this.pnlProfile.Size = new System.Drawing.Size(272, 131);
             this.pnlProfile.TabIndex = 0;
             this.pnlProfile.Visible = false;
-            // 
-            // lblProfileDisplayName
-            // 
-            this.lblProfileDisplayName.AutoSize = true;
-            this.lblProfileDisplayName.Location = new System.Drawing.Point(62, 15);
-            this.lblProfileDisplayName.Name = "lblProfileDisplayName";
-            this.lblProfileDisplayName.Size = new System.Drawing.Size(35, 13);
-            this.lblProfileDisplayName.TabIndex = 1;
-            this.lblProfileDisplayName.Text = "label1";
-            // 
-            // lblProfile
-            // 
-            this.lblProfile.AutoSize = true;
-            this.lblProfile.Location = new System.Drawing.Point(3, 15);
-            this.lblProfile.Name = "lblProfile";
-            this.lblProfile.Size = new System.Drawing.Size(39, 13);
-            this.lblProfile.TabIndex = 0;
-            this.lblProfile.Text = "Profile:";
-            // 
-            // cobxReverse
-            // 
-            this.cobxReverse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cobxReverse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cobxReverse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cobxReverse.FormattingEnabled = true;
-            this.cobxReverse.Location = new System.Drawing.Point(6, 19);
-            this.cobxReverse.Name = "cobxReverse";
-            this.cobxReverse.Size = new System.Drawing.Size(247, 21);
-            this.cobxReverse.TabIndex = 2;
             // 
             // gbxSectionReverse
             // 
@@ -95,24 +65,22 @@
             this.gbxSectionReverse.Controls.Add(this.btnReverse);
             this.gbxSectionReverse.Controls.Add(this.cobxReverse);
             this.gbxSectionReverse.Font = new System.Drawing.Font("Marlett", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxSectionReverse.Location = new System.Drawing.Point(6, 52);
+            this.gbxSectionReverse.Location = new System.Drawing.Point(6, 16);
             this.gbxSectionReverse.Name = "gbxSectionReverse";
-            this.gbxSectionReverse.Size = new System.Drawing.Size(260, 123);
+            this.gbxSectionReverse.Size = new System.Drawing.Size(260, 112);
             this.gbxSectionReverse.TabIndex = 3;
             this.gbxSectionReverse.TabStop = false;
             this.gbxSectionReverse.Text = "Reverse Playlist";
             // 
-            // btnReverse
+            // pbrReverse
             // 
-            this.btnReverse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnReverse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReverse.Location = new System.Drawing.Point(6, 78);
-            this.btnReverse.Name = "btnReverse";
-            this.btnReverse.Size = new System.Drawing.Size(75, 23);
-            this.btnReverse.TabIndex = 3;
-            this.btnReverse.Text = "Reverse";
-            this.btnReverse.UseVisualStyleBackColor = true;
-            this.btnReverse.Click += new System.EventHandler(this.btnReverse_Click);
+            this.pbrReverse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbrReverse.Location = new System.Drawing.Point(6, 96);
+            this.pbrReverse.Name = "pbrReverse";
+            this.pbrReverse.Size = new System.Drawing.Size(247, 10);
+            this.pbrReverse.TabIndex = 5;
+            this.pbrReverse.Visible = false;
             // 
             // cbxNewPlaylist
             // 
@@ -127,21 +95,53 @@
             this.cbxNewPlaylist.Text = "create new Playlist";
             this.cbxNewPlaylist.UseVisualStyleBackColor = true;
             // 
-            // pbrReverse
+            // btnReverse
             // 
-            this.pbrReverse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnReverse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReverse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReverse.Location = new System.Drawing.Point(6, 67);
+            this.btnReverse.Name = "btnReverse";
+            this.btnReverse.Size = new System.Drawing.Size(75, 23);
+            this.btnReverse.TabIndex = 3;
+            this.btnReverse.Text = "Reverse";
+            this.btnReverse.UseVisualStyleBackColor = true;
+            this.btnReverse.Click += new System.EventHandler(this.btnReverse_Click);
+            // 
+            // cobxReverse
+            // 
+            this.cobxReverse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbrReverse.Location = new System.Drawing.Point(6, 107);
-            this.pbrReverse.Name = "pbrReverse";
-            this.pbrReverse.Size = new System.Drawing.Size(247, 10);
-            this.pbrReverse.TabIndex = 5;
-            this.pbrReverse.Visible = false;
+            this.cobxReverse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cobxReverse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cobxReverse.FormattingEnabled = true;
+            this.cobxReverse.Location = new System.Drawing.Point(6, 19);
+            this.cobxReverse.Name = "cobxReverse";
+            this.cobxReverse.Size = new System.Drawing.Size(247, 21);
+            this.cobxReverse.TabIndex = 2;
+            // 
+            // lblProfileDisplayName
+            // 
+            this.lblProfileDisplayName.AutoSize = true;
+            this.lblProfileDisplayName.Location = new System.Drawing.Point(62, 0);
+            this.lblProfileDisplayName.Name = "lblProfileDisplayName";
+            this.lblProfileDisplayName.Size = new System.Drawing.Size(35, 13);
+            this.lblProfileDisplayName.TabIndex = 1;
+            this.lblProfileDisplayName.Text = "label1";
+            // 
+            // lblProfile
+            // 
+            this.lblProfile.AutoSize = true;
+            this.lblProfile.Location = new System.Drawing.Point(3, 0);
+            this.lblProfile.Name = "lblProfile";
+            this.lblProfile.Size = new System.Drawing.Size(39, 13);
+            this.lblProfile.TabIndex = 0;
+            this.lblProfile.Text = "Profile:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 205);
+            this.ClientSize = new System.Drawing.Size(297, 156);
             this.Controls.Add(this.pnlProfile);
             this.Name = "Form1";
             this.Text = "Form1";
