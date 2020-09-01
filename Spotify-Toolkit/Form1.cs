@@ -74,16 +74,16 @@ namespace Spotify_Toolkit
         /// <param name="createNewPlaylist"></param> Wether or not a new playlist is to be created
         private void ReversePlaylist(SimplePlaylist playlist, bool createNewPlaylist)
         {
+            pbrReverse.Value = 0;
+            pbrReverse.Visible = true;
+            pbrReverse.Maximum = playlist.Tracks.Total;
             if (createNewPlaylist)
             {
-                pbrReverse.Value = 0;
-                pbrReverse.Visible = true;
                 Paging<PlaylistTrack> paging = new Paging<PlaylistTrack>();
                 for (int i = 0; i < playlist.Tracks.Total; i += 100)
                 {
                     paging = _spotify.GetPlaylistTracks(playlist.Id, "", 100, i);
                 }
-                pbrReverse.Maximum = playlist.Tracks.Total;
 
                 BackgroundWorker bgw = new BackgroundWorker();
                 bgw.WorkerReportsProgress = false;
@@ -103,6 +103,13 @@ namespace Spotify_Toolkit
                 };
                 bgw.RunWorkerAsync();
             }
+            else
+            {
+                for(int i = 0; i < playlist.Tracks.Total; i++)
+                {
+                    _spotify.ReorderPlaylist(playlist.Id, i, 0);
+                }
+            }
         }
 
         /// <summary>
@@ -111,7 +118,7 @@ namespace Spotify_Toolkit
         /// <param name="pbr"></param> progressbar to perform step
         private static void progressBarStep(ProgressBar pbr)
         {
-            Boolean modified = false;
+            bool modified = false;
             if (pbr.Value + 2 > pbr.Maximum)
             {
                 pbr.Maximum = pbr.Value + 2;

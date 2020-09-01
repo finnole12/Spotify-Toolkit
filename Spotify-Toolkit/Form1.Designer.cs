@@ -30,14 +30,14 @@
         {
             this.pnlProfile = new System.Windows.Forms.Panel();
             this.gbxSectionReverse = new System.Windows.Forms.GroupBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.tbxNewName = new System.Windows.Forms.TextBox();
             this.pbrReverse = new System.Windows.Forms.ProgressBar();
             this.cbxNewPlaylist = new System.Windows.Forms.CheckBox();
             this.btnReverse = new System.Windows.Forms.Button();
             this.cobxReverse = new System.Windows.Forms.ComboBox();
             this.lblProfileDisplayName = new System.Windows.Forms.Label();
             this.lblProfile = new System.Windows.Forms.Label();
-            this.tbxNewName = new System.Windows.Forms.TextBox();
-            this.lblName = new System.Windows.Forms.Label();
             this.pnlProfile.SuspendLayout();
             this.gbxSectionReverse.SuspendLayout();
             this.SuspendLayout();
@@ -59,8 +59,7 @@
             // 
             // gbxSectionReverse
             // 
-            this.gbxSectionReverse.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbxSectionReverse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxSectionReverse.Controls.Add(this.lblName);
             this.gbxSectionReverse.Controls.Add(this.tbxNewName);
@@ -75,6 +74,34 @@
             this.gbxSectionReverse.TabIndex = 3;
             this.gbxSectionReverse.TabStop = false;
             this.gbxSectionReverse.Text = "Reverse Playlist";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(20, 71);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(38, 13);
+            this.lblName.TabIndex = 7;
+            this.lblName.Text = "Name:";
+            // 
+            // tbxNewName
+            // 
+            this.tbxNewName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxNewName.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxNewName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbxNewName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxNewName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tbxNewName.Location = new System.Drawing.Point(68, 69);
+            this.tbxNewName.Multiline = true;
+            this.tbxNewName.Name = "tbxNewName";
+            this.tbxNewName.Size = new System.Drawing.Size(207, 18);
+            this.tbxNewName.TabIndex = 6;
+            this.tbxNewName.Text = "...type Name";
+            this.tbxNewName.TextChanged += new System.EventHandler(this.tbxNewName_TextChanged);
+            this.tbxNewName.Enter += new System.EventHandler(this.tbxNewName_Enter);
+            this.tbxNewName.Leave += new System.EventHandler(this.tbxNewName_Leave);
             // 
             // pbrReverse
             // 
@@ -142,34 +169,6 @@
             this.lblProfile.Size = new System.Drawing.Size(39, 13);
             this.lblProfile.TabIndex = 0;
             this.lblProfile.Text = "Profile:";
-            // 
-            // tbxNewName
-            // 
-            this.tbxNewName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxNewName.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxNewName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbxNewName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxNewName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tbxNewName.Location = new System.Drawing.Point(68, 69);
-            this.tbxNewName.Multiline = true;
-            this.tbxNewName.Name = "tbxNewName";
-            this.tbxNewName.Size = new System.Drawing.Size(207, 18);
-            this.tbxNewName.TabIndex = 6;
-            this.tbxNewName.Text = "...type Name";
-            this.tbxNewName.TextChanged += new System.EventHandler(this.tbxNewName_TextChanged);
-            this.tbxNewName.Enter += new System.EventHandler(this.tbxNewName_Enter);
-            this.tbxNewName.Leave += new System.EventHandler(this.tbxNewName_Leave);
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(20, 71);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(38, 13);
-            this.lblName.TabIndex = 7;
-            this.lblName.Text = "Name:";
             // 
             // Form1
             // 
