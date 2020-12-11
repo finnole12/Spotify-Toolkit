@@ -181,5 +181,10 @@ namespace Spotify_Toolkit
                 tbxNewName.Text = generatedName;
             }
         }
+
+        private void btnNewPlaylistConfig_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

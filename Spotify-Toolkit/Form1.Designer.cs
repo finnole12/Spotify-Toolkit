@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlProfile = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnNewPlaylistConfig = new System.Windows.Forms.Button();
             this.gbxSectionReverse = new System.Windows.Forms.GroupBox();
             this.lblName = new System.Windows.Forms.Label();
             this.tbxNewName = new System.Windows.Forms.TextBox();
@@ -39,6 +41,7 @@
             this.lblProfileDisplayName = new System.Windows.Forms.Label();
             this.lblProfile = new System.Windows.Forms.Label();
             this.pnlProfile.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.gbxSectionReverse.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,15 +50,36 @@
             this.pnlProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlProfile.Controls.Add(this.groupBox1);
             this.pnlProfile.Controls.Add(this.gbxSectionReverse);
             this.pnlProfile.Controls.Add(this.lblProfileDisplayName);
             this.pnlProfile.Controls.Add(this.lblProfile);
             this.pnlProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlProfile.Location = new System.Drawing.Point(2, 5);
             this.pnlProfile.Name = "pnlProfile";
-            this.pnlProfile.Size = new System.Drawing.Size(293, 226);
+            this.pnlProfile.Size = new System.Drawing.Size(595, 512);
             this.pnlProfile.TabIndex = 0;
             this.pnlProfile.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnNewPlaylistConfig);
+            this.groupBox1.Location = new System.Drawing.Point(6, 230);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(583, 272);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "gbxSync";
+            // 
+            // btnNewPlaylistConfig
+            // 
+            this.btnNewPlaylistConfig.Location = new System.Drawing.Point(4, 19);
+            this.btnNewPlaylistConfig.Name = "btnNewPlaylistConfig";
+            this.btnNewPlaylistConfig.Size = new System.Drawing.Size(575, 23);
+            this.btnNewPlaylistConfig.TabIndex = 2;
+            this.btnNewPlaylistConfig.Text = "new Playlist Config";
+            this.btnNewPlaylistConfig.UseVisualStyleBackColor = true;
+            this.btnNewPlaylistConfig.Click += new System.EventHandler(this.btnNewPlaylistConfig_Click);
             // 
             // gbxSectionReverse
             // 
@@ -70,7 +94,7 @@
             this.gbxSectionReverse.Font = new System.Drawing.Font("Marlett", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxSectionReverse.Location = new System.Drawing.Point(6, 16);
             this.gbxSectionReverse.Name = "gbxSectionReverse";
-            this.gbxSectionReverse.Size = new System.Drawing.Size(281, 207);
+            this.gbxSectionReverse.Size = new System.Drawing.Size(583, 207);
             this.gbxSectionReverse.TabIndex = 3;
             this.gbxSectionReverse.TabStop = false;
             this.gbxSectionReverse.Text = "Reverse Playlist";
@@ -96,7 +120,7 @@
             this.tbxNewName.Location = new System.Drawing.Point(68, 69);
             this.tbxNewName.Multiline = true;
             this.tbxNewName.Name = "tbxNewName";
-            this.tbxNewName.Size = new System.Drawing.Size(207, 18);
+            this.tbxNewName.Size = new System.Drawing.Size(509, 18);
             this.tbxNewName.TabIndex = 6;
             this.tbxNewName.Text = "...type Name";
             this.tbxNewName.TextChanged += new System.EventHandler(this.tbxNewName_TextChanged);
@@ -109,7 +133,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbrReverse.Location = new System.Drawing.Point(6, 191);
             this.pbrReverse.Name = "pbrReverse";
-            this.pbrReverse.Size = new System.Drawing.Size(268, 10);
+            this.pbrReverse.Size = new System.Drawing.Size(570, 10);
             this.pbrReverse.TabIndex = 5;
             this.pbrReverse.Visible = false;
             // 
@@ -121,9 +145,9 @@
             this.cbxNewPlaylist.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxNewPlaylist.Location = new System.Drawing.Point(7, 47);
             this.cbxNewPlaylist.Name = "cbxNewPlaylist";
-            this.cbxNewPlaylist.Size = new System.Drawing.Size(114, 17);
+            this.cbxNewPlaylist.Size = new System.Drawing.Size(245, 17);
             this.cbxNewPlaylist.TabIndex = 4;
-            this.cbxNewPlaylist.Text = "create new Playlist";
+            this.cbxNewPlaylist.Text = "create new Playlist ( local Files will be ignored )";
             this.cbxNewPlaylist.UseVisualStyleBackColor = true;
             this.cbxNewPlaylist.CheckedChanged += new System.EventHandler(this.cbxNewPlaylist_CheckedChanged);
             // 
@@ -148,7 +172,7 @@
             this.cobxReverse.FormattingEnabled = true;
             this.cobxReverse.Location = new System.Drawing.Point(6, 19);
             this.cobxReverse.Name = "cobxReverse";
-            this.cobxReverse.Size = new System.Drawing.Size(268, 21);
+            this.cobxReverse.Size = new System.Drawing.Size(570, 21);
             this.cobxReverse.TabIndex = 2;
             this.cobxReverse.SelectionChangeCommitted += new System.EventHandler(this.cobxReverse_SelectionChangeCommitted);
             // 
@@ -174,12 +198,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 233);
+            this.ClientSize = new System.Drawing.Size(599, 519);
             this.Controls.Add(this.pnlProfile);
             this.Name = "Form1";
             this.Text = "Spotify Toolkit";
             this.pnlProfile.ResumeLayout(false);
             this.pnlProfile.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.gbxSectionReverse.ResumeLayout(false);
             this.gbxSectionReverse.PerformLayout();
             this.ResumeLayout(false);
@@ -198,6 +223,8 @@
         private System.Windows.Forms.ProgressBar pbrReverse;
         private System.Windows.Forms.TextBox tbxNewName;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnNewPlaylistConfig;
     }
 }
 
